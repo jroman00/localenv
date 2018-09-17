@@ -6,8 +6,33 @@ readonly PARENT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd -P)
 readonly LOCALENV_DIR=$(cd $(dirname "$PARENT_DIR") && pwd -P)
 
 readonly BIN_DIR=$LOCALENV_DIR/bin
+readonly CONFIGS_DIR=$LOCALENV_DIR/configs
 
 source $BIN_DIR/utils/shell-helpers.sh
+
+# Validate requirements before initializing
+validate_requirements() {
+  # Validate docker-compose is installed
+  if ! type "docker-compose" > /dev/null 2>&1 ; then
+    echo_red "Missing dependency: docker-compose"
+    echo_red "See the Prerequisites section of README.md"
+    exit 1
+  fi
+
+  # Validate jq is installed
+  if ! type "jq" > /dev/null 2>&1 ; then
+    echo_red "Missing dependency: jq"
+    echo_red "See the Prerequisites section of README.md"
+    exit 1
+  fi
+
+  # Confirm repos.json exists
+  if [ ! -s $CONFIGS_DIR/repos.json ] ; then
+    echo_red "configs/repos.json is either missing or empty"
+    echo_red "See the Configuration section of README.md"
+    exit 1
+  fi
+}
 
 # Main function
 main() {
@@ -29,4 +54,5 @@ main() {
   echo_green "localenv successfully initialized!\n"
 }
 
+validate_requirements
 main
