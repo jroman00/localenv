@@ -13,10 +13,6 @@ trim_trailing_whitespace = true
 indent_size = 4
 indent_style = space
 
-[*.md]
-indent_size = 4
-indent_style = space
-
 [*.{php,py}]
 indent_size = 4
 indent_style = space
