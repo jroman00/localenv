@@ -6,7 +6,7 @@ The purpose of this project is to help with local development by setting up an e
 
 These instructions will get you a copy of an example project up and running on your local machine for development
 
-**NOTE**: The example application is defined in `configs/repos.json` and whose source code can be found at [https://github.com/jroman00/localenv-example](https://github.com/jroman00/localenv-example)
+**NOTE**: The example application is defined in `configs/repos.json` and its source code can be found at [https://github.com/jroman00/localenv-example](https://github.com/jroman00/localenv-example)
 
 **IMPORTANT**: For the rest of the installation, we will assume your company/account name is `acme`. **Please update any references below where appropriate**
 
