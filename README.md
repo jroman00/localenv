@@ -27,7 +27,7 @@ Create a fork of [https://github.com/jroman00/localenv](https://github.com/jroma
 
 ### 2. Clone the Repo
 
-```
+```bash
 git clone https://github.com/acme/localenv
 ```
 
@@ -35,20 +35,19 @@ git clone https://github.com/acme/localenv
 
 Enter into the newly created `localenv` directory:
 
-```
+```bash
 cd localenv
 ```
 
 ### 4. Initialize
 
-```
+```bash
 bin/init
 ```
 
 ### 5. Enjoy!
 
 The example application should now be running in the localenv ecosystem. To access it, please point your browser to [http://localhost:8080/](http://localhost:8080/)
-
 
 ## Configuration
 
@@ -58,7 +57,7 @@ For demonstration purposes, an example application was preloaded, however, in or
 
 Assuming your company/account name is `acme` and your application names are `foo` and `bar`, your `config/repos.json` would look like this:
 
-```
+```javascript
 {
     "foo": {
         "git_url": "git@github.com:acme/foo.git"
@@ -71,7 +70,7 @@ Assuming your company/account name is `acme` and your application names are `foo
 
 Each application that is being included in the localenv ecosystem should fulfill the following requirements:
 
-- Contain a `docker-compose.json` file with the following entry for a network:
+- Contain a `docker-compose.yml` file with the following entry for a network:
     ```
       ...
 
@@ -102,7 +101,7 @@ There are a handful of useful scripts to manage the network of applications in l
 
 This will initialize the entire network of applications and is the first script to be run
 
-```
+```bash
 bin/init
 ```
 
@@ -118,7 +117,7 @@ Running this script will:
 
 This will start the entire network of applications
 
-```
+```bash
 bin/start
 ```
 
@@ -132,7 +131,7 @@ Running this script will:
 
 This will stop the entire network of applications
 
-```
+```bash
 bin/stop
 ```
 
@@ -148,7 +147,7 @@ Running this script will:
 
 During local development, you may want to avoid using `localhost` and instead use custom URLs. If that is the case, simply update your `/etc/hosts` file. For example:
 
-```
+```bash
 127.0.0.1 localenv-example.it
 ```
 
