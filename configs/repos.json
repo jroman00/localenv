@@ -1,5 +1,8 @@
 {
-    "localenv-example": {
-        "git_url": "git@github.com:jroman00/localenv-example.git"
+    "localenv-example-node": {
+        "git_url": "git@github.com:jroman00/localenv-example-node.git"
+    },
+    "localenv-example-php": {
+        "git_url": "git@github.com:jroman00/localenv-example-php.git"
     }
 }
