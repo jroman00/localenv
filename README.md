@@ -1,4 +1,4 @@
-# localenv
+# jroman00/localenv
 
 The purpose of this project is to help with local development by setting up an entire network of individually running local applications and any needed backing services
 
