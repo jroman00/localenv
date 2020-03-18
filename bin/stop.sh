@@ -11,18 +11,18 @@ source $BIN_DIR/utils/shell-helpers.sh
 
 # Main function
 main() {
-  echo_yellow "Starting localenv..."
+  echo_yellow "Stopping localenv..."
 
-  # Start databases
-  $BIN_DIR/globals/start-global-databases
+  # Stop repos
+  bash $BIN_DIR/repos/stop-repos.sh
 
-  # Start cache
-  $BIN_DIR/globals/start-global-cache
+  # Stop databases
+  bash $BIN_DIR/globals/stop-global-databases.sh
 
-  # Start repos
-  $BIN_DIR/repos/start-repos
+  # Stop cache
+  bash $BIN_DIR/globals/stop-global-cache.sh
 
-  echo_green "localenv successfully started!\n"
+  echo_green "localenv successfully stopped!\n"
 }
 
 main

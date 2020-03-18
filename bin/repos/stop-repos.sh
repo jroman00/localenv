@@ -13,21 +13,21 @@ source $BIN_DIR/utils/shell-helpers.sh
 
 # Main function
 main() {
-  echo_yellow "Initializing repositories..."
+  echo_yellow "Stopping repositories..."
 
   while IFS= read -r REPO_NAME && IFS= read -r GIT_URL ; do
-    echo_yellow "${TAB}Initializing $REPO_NAME repository..."
+    echo_yellow "Stopping $REPO_NAME repository..."
 
-    if [ -f "$APPS_DIR/$REPO_NAME/bin/local-init" ] ; then
-      echo_yellow "${TABx2}Running local-init script for repo $REPO_NAME..."
+    if [ -f "$APPS_DIR/$REPO_NAME/bin/local-stop.sh" ] ; then
+      echo_yellow "Running local-stop script for repo $REPO_NAME..."
 
-      $APPS_DIR/$REPO_NAME/bin/local-init
+      bash $APPS_DIR/$REPO_NAME/bin/local-stop.sh
     else
-      echo_red "${TABx2}Local-init script does not exist for repo $REPO_NAME. You may want to add that..."
+      echo_red "Local-stop script does not exist for repo $REPO_NAME. You may want to add that..."
     fi
   done < <(jq -r 'keys[] as $k | $k, .[$k].git_url' < $CONFIGS_DIR/repos.json)
 
-  echo_green "Repositories initialized successfully!\n"
+  echo_green "Repositories stopped successfully!\n"
 }
 
 main

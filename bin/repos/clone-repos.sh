@@ -13,21 +13,21 @@ source $BIN_DIR/utils/shell-helpers.sh
 
 # Main function
 main() {
-  echo_yellow "Stopping repositories..."
+  echo_yellow "Cloning repositories..."
 
   while IFS= read -r REPO_NAME && IFS= read -r GIT_URL ; do
-    echo_yellow "${TAB}Stopping $REPO_NAME repository..."
+    echo_yellow "Cloning $REPO_NAME repository..."
 
-    if [ -f "$APPS_DIR/$REPO_NAME/bin/local-stop" ] ; then
-      echo_yellow "${TABx2}Running local-stop script for repo $REPO_NAME..."
+    if [ ! -d "$APPS_DIR/$REPO_NAME" ] ; then
+      git clone $GIT_URL $APPS_DIR/$REPO_NAME
 
-      $APPS_DIR/$REPO_NAME/bin/local-stop
+      echo_green "$REPO_NAME repository cloned successfully!"
     else
-      echo_red "${TABx2}Local-stop script does not exist for repo $REPO_NAME. You may want to add that..."
+      echo_yellow "$REPO_NAME has already been cloned."
     fi
   done < <(jq -r 'keys[] as $k | $k, .[$k].git_url' < $CONFIGS_DIR/repos.json)
 
-  echo_green "Repositories stopped successfully!\n"
+  echo_green "Repositories have been cloned successfully!\n"
 }
 
 main

@@ -16,11 +16,11 @@ main() {
   readonly NETWORK_NAME=localenv_network
 
   if [ "$(docker network ls --format {{.Name}} | grep -w $NETWORK_NAME)" ] ; then
-    echo_yellow "${TAB}$NETWORK_NAME already exists"
+    echo_yellow "$NETWORK_NAME already exists"
   else
     docker network create $NETWORK_NAME --driver bridge 1> /dev/null
 
-    echo_green "${TAB}$NETWORK_NAME created"
+    echo_green "$NETWORK_NAME created"
   fi
 
   echo_green "Docker network started successfully!\n"

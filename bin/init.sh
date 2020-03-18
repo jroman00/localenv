@@ -39,17 +39,17 @@ main() {
   echo_yellow "Initializing localenv..."
 
   # Initialize network
-  $BIN_DIR/globals/init-docker-network
+  bash $BIN_DIR/globals/init-docker-network.sh
 
   # Initialize databases
-  $BIN_DIR/globals/init-global-databases
+  bash $BIN_DIR/globals/init-global-databases.sh
 
   # Initialize cache
-  $BIN_DIR/globals/init-global-cache
+  bash $BIN_DIR/globals/init-global-cache.sh
 
   # Initialize repos
-  $BIN_DIR/repos/clone-repos
-  $BIN_DIR/repos/init-repos
+  bash $BIN_DIR/repos/clone-repos.sh
+  bash $BIN_DIR/repos/init-repos.sh
 
   echo_green "localenv successfully initialized!\n"
 }

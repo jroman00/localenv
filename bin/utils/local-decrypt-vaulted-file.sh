@@ -32,10 +32,10 @@ main() {
 
 # Function that print out debug info
 print_debug_info() {
-  echo_yellow "${TAB}Debug info:"
-  echo_yellow "${TABx2}Input file: $INPUT_FILE"
-  echo_yellow "${TABx2}Output file: $OUTPUT_FILE"
-  echo_yellow "${TABx2}Password file: $PASSWORD_FILE"
+  echo_yellow "Debug info:"
+  echo_yellow "  Input file: $INPUT_FILE"
+  echo_yellow "  Output file: $OUTPUT_FILE"
+  echo_yellow "  Password file: $PASSWORD_FILE"
 }
 
 # Function that verifies required input was passed in

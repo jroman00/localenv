@@ -16,14 +16,14 @@ main() {
   echo_yellow "Starting repositories..."
 
   while IFS= read -r REPO_NAME && IFS= read -r GIT_URL ; do
-    echo_yellow "${TAB}Starting $REPO_NAME repository..."
+    echo_yellow "Starting $REPO_NAME repository..."
 
-    if [ -f "$APPS_DIR/$REPO_NAME/bin/local-start" ] ; then
-      echo_yellow "${TABx2}Running local-start script for repo $REPO_NAME..."
+    if [ -f "$APPS_DIR/$REPO_NAME/bin/local-start.sh" ] ; then
+      echo_yellow "Running local-start script for repo $REPO_NAME..."
 
-      $APPS_DIR/$REPO_NAME/bin/local-start
+      bash $APPS_DIR/$REPO_NAME/bin/local-start.sh
     else
-      echo_red "${TABx2}Local-start script does not exist for repo $REPO_NAME. You may want to add that..."
+      echo_red "Local-start script does not exist for repo $REPO_NAME. You may want to add that..."
     fi
   done < <(jq -r 'keys[] as $k | $k, .[$k].git_url' < $CONFIGS_DIR/repos.json)
 

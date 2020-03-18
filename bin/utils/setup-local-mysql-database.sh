@@ -36,11 +36,11 @@ verify_input() {
 
 # Function that prints out debug info
 print_debug_info() {
-  echo_yellow "${TAB}Debug info:"
-  echo_yellow "${TABx2}DB Container: $DB_CONTAINER"
-  echo_yellow "${TABx2}DB Name: $DB_NAME"
-  echo_yellow "${TABx2}DB User: $DB_USER"
-  echo_yellow "${TABx2}DB Password: $DB_PASSWORD"
+  echo_yellow "Debug info:"
+  echo_yellow "  DB Container: $DB_CONTAINER"
+  echo_yellow "  DB Name: $DB_NAME"
+  echo_yellow "  DB User: $DB_USER"
+  echo_yellow "  DB Password: $DB_PASSWORD"
 }
 
 # Function that outputs usage information

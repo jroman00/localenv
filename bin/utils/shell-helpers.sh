@@ -6,10 +6,6 @@ readonly RED='\033[0;31m'
 readonly YELLOW='\033[1;33m'
 readonly NC='\033[0m' # No Color
 
-# Spacing variables
-readonly TAB='  '
-readonly TABx2='    '
-
 # Function used to color echo text in green
 echo_green() {
   echo -e "${GREEN}$@${NC}"
