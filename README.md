@@ -47,7 +47,10 @@ bash bin/init.sh
 
 ### 5. Enjoy!
 
-The example application should now be running in the localenv ecosystem. To access it, please point your browser to [http://localhost:8080/](http://localhost:8080/)
+The example application should now be running in the localenv ecosystem. To access it, please point your browser to:
+
+- [http://localhost:8080/](http://localhost:8080/) for the Node.js example application
+- [http://localhost:8081/](http://localhost:8081/) for the PHP example application
 
 ## Configuration
 
@@ -151,4 +154,6 @@ During local development, you may want to avoid using `localhost` and instead us
 127.0.0.1 localenv-example.it
 ```
 
-Remember that you will still need to include the port. In this case, you can visit [http://localenv-example.it:8080/](http://localenv-example.it:8080/)
+Remember that you will still need to include the port. In this case, you can visit:
+- [http://localenv-example.it:8080/](http://localenv-example.it:8080/) for the Node.js example application
+- [http://localenv-example.it:8081/](http://localenv-example.it:8081/) for the PHP example application
