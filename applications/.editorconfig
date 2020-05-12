@@ -1,0 +1,6 @@
+# See https://editorconfig.org/
+
+# This file exists solely to ensure that the .editorconfig file in the root of
+# localenv doesn't affect all repos under the applications directory that
+# don't yet define their own .editorconfig file
+root = true
