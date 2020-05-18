@@ -1,6 +1,30 @@
+<!-- omit in toc -->
 # jroman00/localenv
 
 The purpose of this project is to help with local development with Docker Compose by setting up an entire network of individually running local applications and any needed backing services
+
+<!-- omit in toc -->
+## Summary
+
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+  - [1. Fork the Repo](#1-fork-the-repo)
+  - [2. Clone the Repo](#2-clone-the-repo)
+  - [3. Change Directory](#3-change-directory)
+  - [4. Initialize](#4-initialize)
+  - [5. Enjoy!](#5-enjoy)
+- [Configuration](#configuration)
+  - [Applications](#applications)
+  - [Databases](#databases)
+  - [Cache](#cache)
+- [Scripts](#scripts)
+  - [Init](#init)
+  - [Start](#start)
+  - [Stop](#stop)
+- [Additional Customization](#additional-customization)
+  - [Avoiding the Use of localhost](#avoiding-the-use-of-localhost)
+- [Contributing](#contributing)
 
 ## Getting Started
 
@@ -157,3 +181,9 @@ During local development, you may want to avoid using `localhost` and instead us
 Remember that you will still need to include the port. In this case, you can visit:
 - [http://localenv-example.it:8080/](http://localenv-example.it:8080/) for the Node.js example application
 - [http://localenv-example.it:8081/](http://localenv-example.it:8081/) for the PHP example application
+
+## Contributing
+
+When contributing to this repository, please first discuss the change you wish to make via an issue, an email, or any other method with the owners of this repository before making a change
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for more details
