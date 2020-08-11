@@ -39,7 +39,7 @@ main() {
   echo_yellow "Initializing localenv..."
 
   # Initialize network
-  bash $BIN_DIR/globals/init-docker-network.sh
+  bash $BIN_DIR/globals/setup-docker-network.sh
 
   # Initialize databases
   bash $BIN_DIR/globals/init-global-databases.sh
