@@ -1,29 +1,17 @@
 .DEFAULT_GOAL := help
 
-clone-repos:
+.PHONY: help
+help: ## Show the help docs (DEFAULT)
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage: make COMMAND\n\nCommands: \033[36m\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-25s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
+.PHONY: clone-repos
+clone-repos: ## Clone all repos from configs/repos.json to the applications directory
 	bash ./bin/repos/clone-repos.sh
 
-init:
+.PHONY: init
+init: ## Initialize the localenv ecosystem
 	bash ./bin/init.sh
 
-setup-docker-network:
+.PHONY: setup-docker-network
+setup-docker-network: ## Set up the localenv Docker bridge network (i.e. localenv_network)
 	bash ./bin/globals/setup-docker-network.sh
-
-#############################################################
-# "Help Documentation"
-#############################################################
-
-help:
-	@echo "  localenv Commands"
-	@echo "  |"
-	@echo "  |_ help (default)              - Show this message"
-	@echo "  |_ clone-repos                 - Clone all repos from configs/repos.json to the applications directory"
-	@echo "  |_ init                        - Initialize the localenv ecosystem"
-	@echo "  |_ setup-docker-network        - Set up the localenv Docker bridge network (i.e. localenv_network)"
-	@echo "  |__________________________________________________________________________________________"
-	@echo " "
-
-.PHONY:
-	clone-repos
-	init
-	setup-docker-network
