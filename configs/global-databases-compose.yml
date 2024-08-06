@@ -3,8 +3,6 @@ services:
     container_name: global-mysql
     image: mysql:5.7.21
     platform: linux/x86_64
-    ports:
-      - "33066:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=P@ssw0rd
     networks:
@@ -13,8 +11,6 @@ services:
     container_name: global-postgres
     image: postgres:9.6.7-alpine
     platform: linux/x86_64
-    ports:
-      - "54321:5432"
     networks:
       - localenv_network
 
