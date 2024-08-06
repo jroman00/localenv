@@ -14,7 +14,7 @@ source $BIN_DIR/utils/shell-helpers.sh
 main() {
   echo_yellow "Starting global databases..."
 
-  docker-compose -f $CONFIGS_DIR/global-databases-compose.yml up -d
+  docker compose -f $CONFIGS_DIR/global-databases-compose.yml up -d
 
   echo_green "Global databases started successfully!\n"
 }

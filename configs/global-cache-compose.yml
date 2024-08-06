@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   global-redis:
     container_name: global-redis

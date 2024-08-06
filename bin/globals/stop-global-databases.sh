@@ -14,7 +14,7 @@ source $BIN_DIR/utils/shell-helpers.sh
 main() {
   echo_yellow "Stopping global databases..."
 
-  docker-compose -f $CONFIGS_DIR/global-databases-compose.yml stop
+  docker compose -f $CONFIGS_DIR/global-databases-compose.yml stop
 
   echo_green "Global databases stopped successfully!\n"
 }

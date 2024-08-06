@@ -12,13 +12,6 @@ source $BIN_DIR/utils/shell-helpers.sh
 
 # Validate requirements before initializing
 validate_requirements() {
-  # Validate docker-compose is installed
-  if ! type "docker-compose" > /dev/null 2>&1 ; then
-    echo_red "Missing dependency: docker-compose"
-    echo_red "See the Prerequisites section of README.md"
-    exit 1
-  fi
-
   # Validate jq is installed
   if ! type "jq" > /dev/null 2>&1 ; then
     echo_red "Missing dependency: jq"

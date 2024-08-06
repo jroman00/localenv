@@ -6,25 +6,25 @@ The purpose of this project is to help with local development with Docker Compos
 <!-- omit in toc -->
 ## Summary
 
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-  - [1. Fork the Repo](#1-fork-the-repo)
-  - [2. Clone the Repo](#2-clone-the-repo)
-  - [3. Change Directory](#3-change-directory)
-  - [4. Initialize](#4-initialize)
-  - [5. Enjoy!](#5-enjoy)
-- [Configuration](#configuration)
-  - [Applications](#applications)
-  - [Databases](#databases)
-  - [Cache](#cache)
-- [Scripts](#scripts)
-  - [Init](#init)
-  - [Start](#start)
-  - [Stop](#stop)
-- [Additional Customization](#additional-customization)
-  - [Avoiding the Use of localhost](#avoiding-the-use-of-localhost)
-- [Contributing](#contributing)
+* [Getting Started](#getting-started)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+  * [1. Fork the Repo](#1-fork-the-repo)
+  * [2. Clone the Repo](#2-clone-the-repo)
+  * [3. Change Directory](#3-change-directory)
+  * [4. Initialize](#4-initialize)
+  * [5. Enjoy!](#5-enjoy)
+* [Configuration](#configuration)
+  * [Applications](#applications)
+  * [Databases](#databases)
+  * [Cache](#cache)
+* [Scripts](#scripts)
+  * [Init](#init)
+  * [Start](#start)
+  * [Stop](#stop)
+* [Additional Customization](#additional-customization)
+  * [Avoiding the Use of localhost](#avoiding-the-use-of-localhost)
+* [Contributing](#contributing)
 
 ## Getting Started
 
@@ -38,7 +38,6 @@ These instructions will get you a copy of an example project up and running on y
 
 The following programs are required in order for `localenv` to work as expected
 
-  - [Docker Compose](https://docs.docker.com/compose/install/)
   - [jq](https://stedolan.github.io/jq/)
 
 ## Installation
@@ -106,11 +105,11 @@ Each application that is being included in the localenv ecosystem should fulfill
           external: true
     ```
 - Contain the following scripts (**NOTE**: See the [example PHP application bin scripts](https://github.com/jroman00/localenv-example-php/tree/master/bin) or [example Node.js application bin scripts](https://github.com/jroman00/localenv-example-node/tree/master/bin) for examples):
-  - `bin/local-init.sh` - The script used to initialize the application (i.e. build the images, install dependencies, run migration scripts, and start the container via `docker-compose up -d`). This script is also where setting up database credentials should occur by using built-in utilities in localenv such as:
+  - `bin/local-init.sh` - The script used to initialize the application (i.e. build the images, install dependencies, run migration scripts, and start the container via `docker compose up -d`). This script is also where setting up database credentials should occur by using built-in utilities in localenv such as:
     - `bin/utils/setup-local-mysql-database.sh`
     - `bin/utils/setup-local-postgres-database.sh`
-  - `bin/local-start.sh` - The script used to start the application after it has already been initialized. This script may run anything necessary before starting a container and should at least contain `docker-compose up -d`)
-  - `bin/local-stop.sh` - The script used to stop the application after it has already been initialized. This script may run anything necessary before stopping a container and should at least contain `docker-compose stop -d`)
+  - `bin/local-start.sh` - The script used to start the application after it has already been initialized. This script may run anything necessary before starting a container and should at least contain `docker compose up -d`)
+  - `bin/local-stop.sh` - The script used to stop the application after it has already been initialized. This script may run anything necessary before stopping a container and should at least contain `docker compose stop -d`)
 
 ### Databases
 

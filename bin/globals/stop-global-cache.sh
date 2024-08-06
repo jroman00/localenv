@@ -14,7 +14,7 @@ source $BIN_DIR/utils/shell-helpers.sh
 main() {
   echo_yellow "Stopping global caches..."
 
-  docker-compose -f $CONFIGS_DIR/global-cache-compose.yml stop
+  docker compose -f $CONFIGS_DIR/global-cache-compose.yml stop
 
   echo_green "Global caches stopped successfully!\n"
 }

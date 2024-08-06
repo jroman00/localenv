@@ -14,8 +14,8 @@ source $BIN_DIR/utils/shell-helpers.sh
 main() {
   echo_yellow "Initializing global caches..."
 
-  docker-compose -f $CONFIGS_DIR/global-cache-compose.yml build
-  docker-compose -f $CONFIGS_DIR/global-cache-compose.yml up -d
+  docker compose -f $CONFIGS_DIR/global-cache-compose.yml build
+  docker compose -f $CONFIGS_DIR/global-cache-compose.yml up -d
 
   echo_green "Global caches initialized!\n"
 }

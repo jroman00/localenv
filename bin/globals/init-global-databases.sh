@@ -14,8 +14,8 @@ source $BIN_DIR/utils/shell-helpers.sh
 main() {
   echo_yellow "Initializing global databases..."
 
-  docker-compose -f $CONFIGS_DIR/global-databases-compose.yml build
-  docker-compose -f $CONFIGS_DIR/global-databases-compose.yml up -d
+  docker compose -f $CONFIGS_DIR/global-databases-compose.yml build
+  docker compose -f $CONFIGS_DIR/global-databases-compose.yml up -d
 
   # Allow DB to spin up
   echo_yellow "Allowing DBs a chance to start up...\n"
