@@ -15,17 +15,17 @@ source $BIN_DIR/utils/shell-helpers.sh
 main() {
   echo_yellow "Initializing repositories..."
 
-  while IFS= read -r REPO_NAME && IFS= read -r GIT_URL ; do
-    echo_yellow "Initializing $REPO_NAME repository..."
+  for APPLICATION_DIR in $(ls -d ${APPS_DIR}/*); do
+    echo_yellow "Initializing $(basename $APPLICATION_DIR) repository..."
 
-    if [ -f "$APPS_DIR/$REPO_NAME/bin/local-init.sh" ] ; then
-      echo_yellow "Running local-init script for repo $REPO_NAME..."
+    if [ -f "$APPLICATION_DIR/bin/local-init.sh" ] ; then
+      echo_yellow "Running local-init script for repo $(basename $APPLICATION_DIR)..."
 
-      bash $APPS_DIR/$REPO_NAME/bin/local-init.sh
+      bash $APPLICATION_DIR/bin/local-init.sh
     else
-      echo_red "Local-init script does not exist for repo $REPO_NAME. You may want to add that..."
+      echo_red "Local-init script does not exist for repo $(basename $APPLICATION_DIR). You may want to add that..."
     fi
-  done < <(jq -r 'keys[] as $k | $k, .[$k].git_url' < $CONFIGS_DIR/repos.json)
+  done
 
   echo_green "Repositories initialized successfully!\n"
 }
